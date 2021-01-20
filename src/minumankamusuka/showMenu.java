@@ -12,13 +12,13 @@ import java.util.Scanner;
  */
 public class showMenu {
     Scanner input = new Scanner(System.in);
-    double discount, pay, cashback;
-    int answer, choose, total, price;
+    public double discount, pay, cashback;
+    public int answer, choose, total, price;
     
     void showMenu() {
-        executeTotal x = new executeTotal(); 
+        execute x = new execute(); 
         printNota z = new printNota(); 
-        executeCashback c = new executeCashback();
+        //executeCashback c = new executeCashback();
         
         System.out.println("=======================");
         System.out.println("Mesin Minuman Kamu Suka");
@@ -51,8 +51,8 @@ public class showMenu {
         x.viewTotal();
         System.out.print("Pay : ");
         pay = input.nextDouble();
-        c.executeCashback(pay);
-        c.viewCashback();
+        x.executeCashback(pay);
+        x.viewCashback();
         z.printNota();
     }    
 }
