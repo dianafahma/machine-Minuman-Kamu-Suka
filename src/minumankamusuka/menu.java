@@ -40,22 +40,14 @@ public class menu {
         return finalCost;
     }
 
-    public void discount1() {
+    public void discount(modelDrink[] menu) {
         if (juice.getQty() == 3) {
             double newCoffeePrice = coffe.getPrice() - 0.03;
             coffe.setPrice(newCoffeePrice);
-        }
-    }
-        
-    public void discount2() {
-        if (coffe.getQty() == 3 && soda.getQty() == 3) {
+        }else if (coffe.getQty() == 3 && soda.getQty() == 3) {
             double newWaterPrice = water.getPrice() - 0.09;
             water.setPrice(newWaterPrice);
-        }
-    }        
- 
-    public void discount3() {
-        if (water.getQty() == 1) {
+        }else if (water.getQty() == 1) {
             double newJuicePrice = juice.getPrice() - 0.01;
             double newCoffeePrice = coffe.getPrice() - 0.03;
             double newSodaPrice = soda.getPrice() - 0.003;
@@ -63,6 +55,6 @@ public class menu {
             juice.setPrice(newJuicePrice);
             coffe.setPrice(newCoffeePrice);
             soda.setPrice(newSodaPrice);
-        }
+        }       
     }    
 }

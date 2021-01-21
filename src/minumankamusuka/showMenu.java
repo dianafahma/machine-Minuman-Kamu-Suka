@@ -11,9 +11,9 @@ import java.util.Scanner;
  * @author Asus
  */
 public class showMenu {
-    Scanner input = new Scanner(System.in);
-    public double discount, pay, cashback;
-    public int answer, choose, total;
+    private Scanner input = new Scanner(System.in);
+    private double discount, pay;
+    private int answer, choose, total;
  
     modelDrink[] menuDrinks = new modelDrink[] { new modelDrink("Juice", 10000, 0), new modelDrink("Coffee", 7000, 0),
             new modelDrink("Water", 5000, 0), new modelDrink("Soda", 13000, 0), };
