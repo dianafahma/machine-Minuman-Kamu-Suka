@@ -11,7 +11,6 @@ package minumankamusuka;
  */
 public class modelDrink {
     private double price;
-    private double totalPrice = 0;
     private String name;
     private int qty = 0;
     
@@ -21,14 +20,22 @@ public class modelDrink {
         this.qty = qty;
     }
     
-    public void setPrice(int price){
+    public void setName(String name){
+        this.name = name;
+    }
+    
+    public void setPrice(double price){
         this.price += price;
     }
     
     public void setQty(int qty){
         this.qty += qty;
     }
-    
+
+    public String getName() {
+        return name;
+    }
+        
     public double getPrice() {
         return price;
     }

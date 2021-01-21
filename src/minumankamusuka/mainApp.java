@@ -13,9 +13,8 @@ import java.io.IOException;
 public class mainApp { 
     public static void main(String[] args) throws IOException { 
         showMenu show = new showMenu();
-        boolean isRunning = true;
-        do {
-            show.showMenu();
-        } while (isRunning);       
+        
+        show.showMenu();
+      
     }
 }
