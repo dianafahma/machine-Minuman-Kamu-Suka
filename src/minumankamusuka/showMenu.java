@@ -14,7 +14,10 @@ public class showMenu {
     Scanner input = new Scanner(System.in);
     public double discount, pay, cashback;
     public int answer, choose, total, price;
-    
+ 
+    modelDrink[] menuDrinks = new modelDrink[] { new modelDrink("Juice", 10000, 0), new modelDrink("Coffee", 7000, 0),
+            new modelDrink("Water", 5000, 0), new modelDrink("Soda", 13000, 0), };
+     
     void showMenu() {
         execute x = new execute(); 
         printNota z = new printNota(); 
@@ -40,19 +43,24 @@ public class showMenu {
 	choose = input.nextInt();
             if (choose >= 1 && choose <= 4) {
                 //jika yang dipilih menu 1-4 maka perintahnya akan dieksekusi
+                modelDrink selectedMenu = menuDrinks[choose - 1];    
+                //mengambil nilai array
                 System.out.print("Qty : ");
                 answer = input.nextInt();
+                selectedMenu.setQty(answer);                
             }else{
                 //memasukkan else tanpa printah yang dijalankan 
                 //agar program tidak mengeksekusi apapun jika tak terpenuhi
+                break;
             }
-            x.executeTotal(choose, answer);
+            //x.executeTotal(choose, answer);
         } while(choose != 5); //Looping akan terjadi jika yang dipilih tidak sama dengan 5
-        x.viewTotal();
+        //x.viewTotal();
         System.out.print("Pay : ");
         pay = input.nextDouble();
         x.executeCashback(pay);
         x.viewCashback();
-        z.printNota();
+        menu m = new menu(menuDrinks);
+        z.printNota(m);
     }    
 }
