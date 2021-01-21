@@ -11,17 +11,16 @@ import java.util.Scanner;
  * @author Asus
  */
 public class showMenu {
-    Scanner input = new Scanner(System.in);
-    public double discount, pay, cashback;
-    public int answer, choose, total, price;
+    private Scanner input = new Scanner(System.in);
+    private double discount, pay;
+    private int answer, choose, total;
  
     modelDrink[] menuDrinks = new modelDrink[] { new modelDrink("Juice", 10000, 0), new modelDrink("Coffee", 7000, 0),
             new modelDrink("Water", 5000, 0), new modelDrink("Soda", 13000, 0), };
      
-    void showMenu() {
-        execute x = new execute(); 
+    public void showMenu() {
         printNota z = new printNota(); 
-        //executeCashback c = new executeCashback();
+        menu m = new menu(menuDrinks);
         
         System.out.println("=======================");
         System.out.println("Mesin Minuman Kamu Suka");
@@ -53,14 +52,7 @@ public class showMenu {
                 //agar program tidak mengeksekusi apapun jika tak terpenuhi
                 break;
             }
-            //x.executeTotal(choose, answer);
         } while(choose != 5); //Looping akan terjadi jika yang dipilih tidak sama dengan 5
-        //x.viewTotal();
-        System.out.print("Pay : ");
-        pay = input.nextDouble();
-        x.executeCashback(pay);
-        x.viewCashback();
-        menu m = new menu(menuDrinks);
         z.printNota(m);
     }    
 }
